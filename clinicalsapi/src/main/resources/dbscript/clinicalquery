@@ -1,0 +1,51 @@
+create database clinicals;
+use clinicals;
+
+create table patient(
+id int not null auto_increment,
+last_name varchar(255) not null,
+first_name varchar(255) not null,
+age int,
+primary key (id)
+);
+
+
+create table clinicaldata(
+id int not null auto_increment,
+patient_id int,
+component_name varchar(255) not null,
+component_value varchar(255) not null,
+measured_date_time timestamp default current_timestamp,
+primary key (id),
+constraint fk_patient foreign key (patient_id)
+references patient(id)
+);
+
+
+insert into patient values (1 ,'John','Mccain',52);
+insert into patient values (2 ,'Siva','Shankar',32);
+insert into patient values (3 ,'Anthony','Simon',22);
+insert into patient values (1 ,'John','Mccain',52);
+insert into patient values (4 ,'Siva','Shankar',32);
+insert into patient values (5 ,'Abhram','Mani',55);
+insert into patient values (6 ,'Gandhi','Singh',27);
+insert into patient values (7 ,'Antii','Krovinan',32);
+insert into patient values (8 ,'Simba','White',24);
+insert into patient values (9 ,'Rose','Tanic',29);
+insert into patient values (10,'Rowling','Lte',49);
+
+
+insert into clinicaldata values('1','1','bp','67/119','2018-07-09 19:34:24');
+insert into clinicaldata values('2','2','bp','63/115','2018-06-09 19:34:24');
+insert into clinicaldata values('3','3','bp','72/129','2018-07-26 19:34:24');
+insert into clinicaldata values('7','7','bp','74/139','2018-08-03 19:34:24');
+insert into clinicaldata values('5','5','bp','67/119','2018-08-29 19:34:24');
+insert into clinicaldata values('6','6','bp','62/109','2018-07-12 19:34:24');
+insert into clinicaldata values('21','1','bp','55/102','2018-10-09 19:34:24');
+
+insert into clinicaldata values('51','1','heartrate','67','2018-07-09 19:34:24');
+insert into clinicaldata values('52','2','heartrate','115','2018-06-19 19:34:24');
+insert into clinicaldata values('53','3','heartrate','72','2018-07-26 19:34:24');
+insert into clinicaldata values('54','4','heartrate','74','2018-08-03 19:34:24');
+insert into clinicaldata values('55','5','heartrate','119','2018-08-29 19:34:24');
+insert into clinicaldata values('56','6','heartrate','62','2018-07-12 19:34:24');
