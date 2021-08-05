@@ -23,6 +23,11 @@ public class CheckInController {
 	@Autowired
 	ReservationRestClient restClient;
 	
+	@RequestMapping("/showCheckIn")
+	public String showCheckIn() {
+		return "startCheckIn";
+	}
+	
 	@RequestMapping("/showStartCheckIn")
 	public String showStartCheckin() {
 		return "startCheckIn";
