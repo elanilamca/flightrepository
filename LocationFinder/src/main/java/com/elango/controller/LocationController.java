@@ -98,10 +98,11 @@ public class LocationController {
 	
 	@RequestMapping("/generateReport")
 	public String generateReport() {
-		//List<Object[]> data = repo.findTypeAndTypeCount();
-		//String realPath = sc.getRealPath("/");
-		//reportutil.generatePieChart(realPath, data);
-		return "report";
+		String realPath = sc.getRealPath("/");
+		List<Object[]> data = repo.findTypeAndTypeCount();
+	
+		reportutil.generatePieChart(realPath, data);
+		return "report2";
 		
 	}
 	

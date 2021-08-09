@@ -7,6 +7,6 @@
 <title>Report </title>
 </head>
 <body>
-<img  src="pieChart.jpeg">
+<img  src="pieChart.jpeg"/>
 </body>
 </html>
